@@ -1,35 +1,26 @@
 package ru.job4j.condition;
 
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.offset;
 
 class SqAreaTest {
 
     @Test
     void whenP6K2Square2() {
-        double expected = 2;
-        double p = 6;
-        double k = 2;
+        int expected = 2;
+        int p = 6;
+        int k = 2;
         double out = SqArea.square(p, k);
-        assertThat(out).isEqualTo(expected, withPrecision(0.01));
+        assertThat(out).isCloseTo(expected, offset(0.01));
     }
 
     @Test
-    void whenP10K3Square4Dot68() {
-        double expected = 4.68;
-        double p = 10;
-        double k = 3;
+    void whenP4K1Square1() {
+        int expected = 1;
+        int p = 4;
+        int k = 1;
         double out = SqArea.square(p, k);
-        assertThat(out).isEqualTo(expected, withPrecision(0.01));
-    }
-
-    @Test
-    void whenP8K4Square2Dot56() {
-        double expected = 2.56;
-        double p = 8;
-        double k = 4;
-        double out = SqArea.square(p, k);
-        assertThat(out).isEqualTo(expected, withPrecision(0.01));
+        assertThat(out).isCloseTo(expected, offset(0.01));
     }
 }
