@@ -13,4 +13,19 @@ public class TwoNumberSum {
         }
         return new int[0];
     }
+
+    public static int[] getIndexes2(int[] array, int target) {
+        int i = 0;
+        int j = array.length - 1;
+        while (j > 0) {
+            if (array[i] + array[j] != target) {
+                i++;
+            }
+            if (array[i] + array[j] == target) {
+                return new int[] {i, j};
+            }
+            j--;
+        }
+        return new int[0];
+    }
 }

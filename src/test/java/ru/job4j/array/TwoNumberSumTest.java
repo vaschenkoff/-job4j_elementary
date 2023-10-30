@@ -40,4 +40,40 @@ class TwoNumberSumTest {
         int[] expected = {2, 4};
         assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    void whenTwoEqualsNumbersYesTarget2() {
+        int[] array = {5, 5};
+        int target = 10;
+        int[] result = TwoNumberSum.getIndexes2(array, target);
+        int[] expected = {0, 1};
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenTwoEqualsNumbersNoTarget2() {
+        int[] array = {5, 5};
+        int target = 12;
+        int[] result = TwoNumberSum.getIndexes2(array, target);
+        int[] expected = {};
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenWithNegativeNumbersYesTarget2() {
+        int[] array = {-7, -5, 0, 5, 8, 12};
+        int target = 3;
+        int[] result = TwoNumberSum.getIndexes2(array, target);
+        int[] expected = {1, 4};
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenWithoutNegativeNumbersYesTarget2() {
+        int[] array = {0, 2, 5, 8, 10, 12};
+        int target = 15;
+        int[] result = TwoNumberSum.getIndexes2(array, target);
+        int[] expected = {2, 4};
+        assertThat(result).isEqualTo(expected);
+    }
 }
