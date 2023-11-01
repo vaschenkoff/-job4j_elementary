@@ -1,6 +1,6 @@
 package ru.job4j.array;
 
-public class ArrayDefinition {
+public class ArrDef {
     public static void main(String[] args) {
         short[] ages = new short[10];
         System.out.println("Размер массива равен: " + ages.length);
