@@ -41,4 +41,22 @@ class PointTest {
         double out = a.distance(b);
         assertThat(out).isEqualTo(expected, withPrecision(0.01));
     }
+
+    @Test
+    void when111To111Then0() {
+        double expected = 0;
+        Point a = new Point(1, 1, 1);
+        Point b = new Point(1, 1, 1);
+        double out = a.distance3d(b);
+        assertThat(out).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    void when111To123Then0() {
+        double expected = 2.23;
+        Point a = new Point(1, 1, 1);
+        Point b = new Point(1, 2, 3);
+        double out = a.distance3d(b);
+        assertThat(out).isEqualTo(expected, withPrecision(0.01));
+    }
 }
